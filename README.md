@@ -2,6 +2,8 @@
 
 This project is a simple integration of Stripe's payment processing system using React and Material UI. It allows users to input payment details, create customers, and handle payments using the Stripe API.
 
+Estimated developed time: **3.5 hours**
+
 ## Features
 
 - Customer creation via Stripe API
@@ -39,7 +41,6 @@ Before running the project, ensure that you have configured your Stripe keys cor
 ```bash
 REACT_APP_STRIPE_PUBLIC_KEY=your-public-key-here
 ```
-
 
 ## Running the application
 
