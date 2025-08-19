@@ -73,7 +73,7 @@ const StartPayment: React.FC = () => {
       setSnackbarOpen(true);
 
       setLoading(false);
-      navigate('/payment-method');
+      navigate('/delivery');
     } catch (error) {
       setLoading(false);
       

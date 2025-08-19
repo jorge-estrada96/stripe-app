@@ -2,6 +2,7 @@ import { useContext, useMemo } from 'react'
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 
 import StartPayment from '../views/StartPayment';
+import DeliveryDetails from '../views/delivery/DeliveryDetails';
 
 import ProtectedRoute from './protectedRoute'
 
@@ -19,6 +20,7 @@ function AppRouter() {
         <Route path="/" element={<StartPayment />} />
 
         <Route element={<ProtectedRoute hasActivePaymentIntent={hasActivePaymentIntent} />}>
+          <Route path="/delivery" element={<DeliveryDetails />} />
           <Route path="/payment-method" element={<PaymentMethod />} />
         </Route>
       </Routes>

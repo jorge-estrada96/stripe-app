@@ -4,10 +4,22 @@ interface ContextProps {
   children: React.ReactNode;
 }
 
+interface DeliveryData {
+  fullName: string;
+  addressLine1: string;
+  addressLine2?: string;
+  city: string;
+  state?: string;
+  postalCode: string;
+  country: string;
+  method: 'standard' | 'express';
+}
+
 interface SessionData {
   customerId: string | undefined,
   paymentIntentId:  string | undefined,
   clientSecret:  string | undefined,
+  delivery?: DeliveryData,
 }
 
 const DEFAULT_SESSION:SessionData = {
@@ -18,13 +30,13 @@ const DEFAULT_SESSION:SessionData = {
 
 export const SessionContext = createContext({
   session: DEFAULT_SESSION,
-  setSessionData: (updatedSession:any) => {},
+  setSessionData: (updatedSession: Partial<SessionData>) => {},
 });
 
 const Context: React.FC<ContextProps> = ({ children }) => {
   const [session, setSession] = useState(DEFAULT_SESSION);
 
-  const setSessionData = (updatedSession:SessionData) => {
+  const setSessionData = (updatedSession: Partial<SessionData>) => {
     setSession((prevSession) => ({
       ...prevSession,
       ...updatedSession,
