@@ -15,6 +15,13 @@ const useStyles = makeStyles({
     marginTop: '20px',
     marginBottom: '20px'
   },
+  headerBadge: {
+    background: 'linear-gradient(90deg, #635bff 0%, #00d4ff 100%)',
+    color: '#fff',
+    fontWeight: 700,
+    padding: '10px 16px',
+    borderRadius: 12,
+  },
   button: {
     marginTop: '10px!important',
   }
@@ -48,6 +55,7 @@ export const CardForm = (props: props) => {
 
   return (
     <Box>
+      <div className={classes.headerBadge}>Enter your card details</div>
       <CardElement className={classes.creditCardContainer}/>
       <LoadingButton
         className={classes.button}

@@ -68,7 +68,7 @@ export const PaymentMethod = () => {
         <Card className={classes.card}>
           <CardContent>
             <Typography variant="h5" gutterBottom>
-              Payment
+              Payment details
             </Typography>
             <CardForm onCreate={onCreatePaymentMethod} onError={onError} />
           </CardContent>
